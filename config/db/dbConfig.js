@@ -1,6 +1,9 @@
 require('dotenv').config()
-const url = `mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}`;
 
+/** mongodb (atlas) url to connect db */
+const url =  process.env.DB_URL;
+
+/** exporting mongodb configuration to manifest */
 module.exports = {
   url: url,
   settings: {

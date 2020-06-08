@@ -11,6 +11,7 @@ module.exports.compose = () => {
   return Glue.compose(manifest, options);
 };
 
+/** starting server */
 const startServer = async function() {
   try {
     const server = await module.exports.compose();
@@ -43,5 +44,4 @@ if (cluster.isMaster) {
   });
 } else {
   startServer();
-  // console.log(`Worker ${process.pid} started`);
 }

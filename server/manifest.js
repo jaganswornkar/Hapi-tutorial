@@ -6,8 +6,8 @@ const Vision = require("vision");
 
 module.exports = {
   server: {
-    port: process.env.SERVER_PORT,
-    host: process.env.SERVER_HOST
+    port: process.env.SERVER_PORT || 4200,
+    host: process.env.SERVER_HOST || 'localhost'
   },
   register: {
     plugins: [
@@ -34,7 +34,7 @@ module.exports = {
           path: "/docs",
           authorization: {
             field: "apiKey",
-            scope: "query", // header works as well
+            scope: "header", // header works as well
             // valuePrefix: 'bearer ', // prefix incase
             defaultValue: "demoKey",
             placeholder: "Enter your apiKey here"
